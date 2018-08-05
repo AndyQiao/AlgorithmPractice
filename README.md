@@ -5,11 +5,11 @@
 - 栈翻转
 - 递归方法
 
-## MiniSpanTree.cpp
+## [MiniSpanTree.cpp](https://github.com/AndyQiao/algorithm_practice/blob/master/MiniSpanTree.cpp)
 - 权重最小生成树问题
 - Kruskal算法
 
-## CocktailSorting.py
+## [CocktailSorting.py](https://github.com/AndyQiao/algorithm_practice/blob/master/CocktailSorting.py)
 - 改进冒泡排序
 - 改进鸡尾酒排序
 
