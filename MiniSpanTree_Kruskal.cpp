@@ -1,12 +1,12 @@
 /************************************************
-	File£ºMiniSpanTree.cpp
+	Fileï¼šMiniSpanTree.cpp
 	Author:qiaoconglovelife@163.com
 	Date:20160804
 	LastModified Data:20160804
 	Brief:
 
-		×îĞ¡Éú³ÉÊ÷ÎÊÌâ
-		KruskalËã·¨
+		æœ€å°ç”Ÿæˆæ ‘é—®é¢˜
+		Kruskalç®—æ³•
 
 *************************************************/
 
@@ -18,14 +18,14 @@ using namespace std;
 
 typedef unsigned int uint32_t;
 
-// Í¼µÄ±ß
+// å›¾çš„è¾¹
 struct CEdge
 {
-	int u;           // ¶¥µã1
-	int v;           // ¶¥µã2
-	int weight;      // È¨ÖØ
+	int u;           // é¡¶ç‚¹1
+	int v;           // é¡¶ç‚¹2
+	int weight;      // æƒé‡
 	
-	// ÅÅĞòÓÃ
+	// æ’åºç”¨
 	bool operator<(const CEdge& a)
 	{
 		return weight < a.weight;
@@ -33,7 +33,7 @@ struct CEdge
 
 };
 
-// ºÏ²¢¶¥µãaºÍb¸÷×ÔÎ»ÓÚµÄÁ½¿Ã×ÓÊ÷
+// åˆå¹¶é¡¶ç‚¹aå’Œbå„è‡ªä½äºçš„ä¸¤æ£µå­æ ‘
 void UnionSubTree(uint32_t a, uint32_t b, vector<uint32_t> &vuRoot)
 {
 	vuRoot[a] = vuRoot[b];
@@ -48,7 +48,7 @@ void Kruskal
 	vector<CEdge> &vtMiniSpanTree
 )
 {
-	// Ì°ĞÄËã·¨£¬ËùÒÔÏÈÉıĞòÅÅĞò
+	// è´ªå¿ƒç®—æ³•ï¼Œæ‰€ä»¥å…ˆå‡åºæ’åº
 	sort(vtEdges.begin(), vtEdges.end());
 
 	for (auto i = 0; i < vtEdges.size(); ++i)
@@ -76,18 +76,18 @@ int main()
 	vtEdges.push_back({ 1, 3, 5 });
 	vtEdges.push_back({ 2, 3, 2 });
 
-	//Ê¹ÓÃÒ»¸övectorÀ´±íÊ¾¸÷¸ö×ÓÊ÷£¨¼´¼¯ºÏA£©£¬
-	//vuRoot[i]=j£¬±íÊ¾½ÚµãiÓë½ÚµãjÎ»ÓÚÍ¬Ò»×ÓÊ÷ÉÏ£¬²¢ÇÒËùÓĞÎ»ÓÚ´ËÊ÷µÄ½Úµãk£¬¶¼ÓĞvuRoot[k]=j;
-	//³õÊ¼»¯vuRoot[i]=i£¬±íÊ¾Ã¿¿Ã×ÓÊ÷Ö»ÊÇÒ»¸ö½Úµã
+	//ä½¿ç”¨ä¸€ä¸ªvectoræ¥è¡¨ç¤ºå„ä¸ªå­æ ‘ï¼ˆå³é›†åˆAï¼‰ï¼Œ
+	//vuRoot[i]=jï¼Œè¡¨ç¤ºèŠ‚ç‚¹iä¸èŠ‚ç‚¹jä½äºåŒä¸€å­æ ‘ä¸Šï¼Œå¹¶ä¸”æ‰€æœ‰ä½äºæ­¤æ ‘çš„èŠ‚ç‚¹kï¼Œéƒ½æœ‰vuRoot[k]=j;
+	//åˆå§‹åŒ–vuRoot[i]=iï¼Œè¡¨ç¤ºæ¯æ£µå­æ ‘åªæ˜¯ä¸€ä¸ªèŠ‚ç‚¹
 	vector<uint32_t> vuRoot(V, 0);
 	for (int i = 0; i < V; ++i)
 		vuRoot[i] = i;
 
-	// Ö´ĞĞËã·¨
+	// æ‰§è¡Œç®—æ³•
 	vector<CEdge> vtMiniSpanTree;
 	Kruskal(V, vtEdges, vuRoot, vtMiniSpanTree);
 	
-	// ´òÓ¡×îĞ¡Éú³ÉÊ÷
+	// æ‰“å°æœ€å°ç”Ÿæˆæ ‘
 	for (auto i = 0; i < vtMiniSpanTree.size(); ++i)
 	{
 		cout << vtMiniSpanTree[i].u << "<------>" << vtMiniSpanTree[i].v

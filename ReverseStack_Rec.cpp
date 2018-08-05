@@ -1,3 +1,14 @@
+/************************************************
+	File：ReverseStack_Rec.cpp
+	Author:qiaoconglovelife@163.com
+	Date:20160804
+	LastModified Data:20160804
+	Brief:
+
+		栈翻转：递归方法
+
+*************************************************/
+
 #include <stack>
 #include <iostream>
 using namespace std;
