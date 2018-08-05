@@ -13,11 +13,17 @@
 def BubbleSort(alist):
     n=len(alist)
 
+    is_swaped=1
+
 
     for i in range(n-1, 1, -1):
+        is_swaped=0
         for j in range(0, i):
             if(alist[j]>alist[j+1]):
                 alist[j],alist[j+1]=alist[j+1],alist[j]
+                is_swaped=1
+        if not (is_swaped):
+            break
         print("[%d] ==> %s" % (n-1-i, alist))
 
 def CocktailSorting(alist):
@@ -54,15 +60,34 @@ def CocktailSorting(alist):
 
 
 if (__name__ == '__main__'):
-    alist=[9,1,2,3,4,5,6,7,8,1]
-    print("before ==> %s" % alist)
 
+    print("")
+
+    alist=[9,1,2,3,4,5,6,7,8]
+    print("before ==> %s" % alist)
     print("begin Bubble Sort========================")
     BubbleSort(alist)
 
+    print("")
+
+    alist=[9,1,2,3,4,5,6,7,8,1]
+    print("before ==> %s" % alist)
+    print("begin Bubble Sort========================")
+    BubbleSort(alist)
+
+    print("")
+
+    alist=[9,1,2,3,4,5,6,7,8]
+    print("before ==> %s" % alist)
     print("begin Cocktail Sort========================")
     CocktailSorting(alist)
-        
+
+    print("")
+
+    alist=[9,1,2,3,4,5,6,7,8,1]
+    print("before ==> %s" % alist)
+    print("begin Cocktail Sort========================")
+    CocktailSorting(alist)        
 
 
 
