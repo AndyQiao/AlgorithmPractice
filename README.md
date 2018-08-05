@@ -1,7 +1,7 @@
 # algorithm_practice
 不积小流，无以成江海。数据结构、经典算法、编程技巧练习。
 
-## ReverseStack_Rec.cpp
+## [ReverseStack_Rec.cpp](https://github.com/AndyQiao/algorithm_practice/blob/master/ReverseStack_Rec.cpp)
 - 栈翻转
 - 递归方法
 
